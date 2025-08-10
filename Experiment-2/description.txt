@@ -1,0 +1,3 @@
+in experiment 2 i have made a banking interface which shows two buttons and balance ,the two buttons are deposit and withdraw,
+the withdraw button is red in color and deposit button is green in color,
+in this experiment i have used various styling options like border,background color ,display flex,align item and justification

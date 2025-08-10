@@ -1,0 +1,1 @@
+Created a responsive webpage layout using CSS Grid with a header, sidebar, main content area, and footer. Added a dark mode toggle feature that switches colors dynamically for improved accessibility and user experience.

@@ -1,0 +1,61 @@
+/* Light Mode (default) */
+header {
+    border: solid black;
+    background-color: greenyellow;
+    grid-column: 1/span 2;
+    height: 100px;
+    display: flex;
+    justify-content: left;
+    align-content: center;
+    color: white;
+}
+
+aside {
+    border: solid black;
+    background-color: grey;
+}
+
+main {
+    border: solid black;
+    background-color: white;
+}
+
+footer {
+    border: solid black;
+    background-color: greenyellow;
+    grid-column: 1/span 2;
+    height: 100px;
+    color: white;
+    text-align: center;
+}
+
+.myclass {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+/* Dark Mode Styles */
+body.dark-mode header {
+    background-color: #333;
+    color: #fff;
+    border-color: #666;
+}
+
+body.dark-mode aside {
+    background-color: #222;
+    color: #fff;
+    border-color: #555;
+}
+
+body.dark-mode main {
+    background-color: #111;
+    color: #ddd;
+    border-color: #444;
+}
+
+body.dark-mode footer {
+    background-color: #333;
+    color: #fff;
+    border-color: #666;
+}
