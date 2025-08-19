@@ -1,0 +1,3 @@
+I created a live character counter for a textarea that updates in real-time as the user types
+ or deletes text. It dynamically displays the number of characters entered, providing instant feedback 
+ and improving the user’s interaction with the form.
