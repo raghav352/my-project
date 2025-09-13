@@ -1,0 +1,3 @@
+In this experiment, we created a React application using Vite and built a reusable ProductCard component. 
+The component accepts props such as product name, price, and stock status, and displays them in a styled card layout. Multiple cards were rendered dynamically to form a product list. Finally,
+ we applied CSS Flexbox to align and center the product list on the screen for a clean UI.
