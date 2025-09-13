@@ -1,0 +1,13 @@
+We built a React-based Library Management app where users can:
+
+View a list of books with title and author.
+
+Search books dynamically by typing in a search box (filters by title or author).
+
+Add new books through an input form.
+
+Remove books using a button next to each item.
+
+The app uses React state management (useState) to handle book data, search terms, and form inputs.
+ It demonstrates event handling (typing, adding, removing) and dynamic rendering, 
+ so the UI updates instantly without reloading the page.
