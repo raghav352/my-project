@@ -1,0 +1,13 @@
+We built a small React project to practice inheritance in JavaScript ES6 classes.
+
+Created a base Person class with name and age properties plus a displayInfo() method.
+
+Made two subclasses: Student (adds course) and Teacher (adds subject), each overriding displayInfo().
+
+Put all class definitions inside a separate file (PersonClasses.jsx) for better structure.
+
+In App.jsx, imported these classes, created sample objects (Student and Teacher), and used React state to display their info dynamically.
+
+Added two buttons (Show Student Info / Show Teacher Info) that update the UI with details from the respective class instance.
+
+👉 This demonstrated object-oriented programming concepts (inheritance, method overriding) inside a modern React app with clean modularization.
