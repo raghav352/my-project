@@ -1,0 +1,19 @@
+Created a Node.js + Express + MongoDB project.
+
+Implemented logging middleware for request tracking.
+
+Added Bearer Token authentication for protected routes.
+
+Integrated JWT authentication for user login and access control.
+
+Designed banking routes for deposit, withdraw, and balance check.
+
+Built money transfer logic with balance validation.
+
+Added route to seed sample user data into MongoDB.
+
+Tested all routes using Postman.
+
+Used .env for environment configuration and secure keys.
+
+Organized project into models, routes, and middleware folders.
