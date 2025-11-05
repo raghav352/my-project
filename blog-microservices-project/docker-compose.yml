@@ -1,0 +1,78 @@
+version: '3.8'
+services:
+  
+  # --- 1. Databases (Own-Your-Data Principle) ---
+  user_db:
+    image: mongo:6.0
+    container_name: user_db
+    volumes:
+      - user_data:/data/db # Persistent data storage
+  
+  post_db:
+    image: mongo:6.0
+    container_name: post_db
+    volumes:
+      - post_data:/data/db
+  
+  comment_db:
+    image: mongo:6.0
+    container_name: comment_db
+    volumes:
+      - comment_data:/data/db
+
+  # --- 2. Microservices (Build and Connect) ---
+  user:
+    build: ./services/user
+    container_name: user
+    environment:
+      NODE_ENV: production
+      PORT: 3001
+      MONGO_URI: mongodb://user_db:27017/userdb # DNS-based Service Discovery
+      JWT_SECRET: YOUR_SECURE_USER_SECRET_KEY_123
+      SERVICE_NAME: user-service
+    depends_on:
+      - user_db
+
+  post:
+    build: ./services/post
+    container_name: post
+    environment:
+      NODE_ENV: production
+      PORT: 3002
+      MONGO_URI: mongodb://post_db:27017/postdb
+      SERVICE_NAME: post-service
+    depends_on:
+      - post_db
+      - user
+
+  comment:
+    build: ./services/comment
+    container_name: comment
+    environment:
+      NODE_ENV: production
+      PORT: 3003
+      MONGO_URI: mongodb://comment_db:27017/commentdb
+      SERVICE_NAME: comment-service
+    depends_on:
+      - comment_db
+      - post
+
+  # --- 3. API Gateway (The ONLY exposed port) ---
+  api-gateway:
+    build: ./api-gateway
+    container_name: api-gateway
+    environment:
+      NODE_ENV: production
+      PORT: 8080
+      JWT_SECRET: YOUR_SECURE_USER_SECRET_KEY_123
+    depends_on:
+      - user
+      - post
+      - comment
+    ports:
+      - '8080:8080' # Exposes the gateway to http://localhost:8080
+
+volumes:
+  user_data:
+  post_data:
+  comment_data:
